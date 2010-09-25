@@ -1,0 +1,6 @@
+Revision history for Perl extension Net::Dynect::REST.
+
+0.01  Fri Sep 24 09:14:26 2010
+	- original version; created by h2xs 1.23 with options
+		-AX -n Net::Dynect::REST
+	- implements Net::Dynect::REST::Request and Net::Dynect::REST::Response for use with Net::Dynect::REST, and a select few objects to use this API: ARecord, Zone, and ZoneChanges. This gives the ability to add/delete/update A Records ina  zone and publish it.

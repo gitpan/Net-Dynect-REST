@@ -1,0 +1,7 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Net-Dynect-REST.t
+lib/Net/Dynect/REST.pm
+META.yml                                 Module meta-data (added by MakeMaker)
