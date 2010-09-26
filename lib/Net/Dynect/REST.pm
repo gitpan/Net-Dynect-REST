@@ -1,5 +1,5 @@
 package Net::Dynect::REST;
-# $Id: REST.pm 143 2010-09-24 15:46:39Z james $
+# $Id: REST.pm 149 2010-09-26 01:33:15Z james $
 use strict;
 use warnings;
 use Net::Dynect::REST::Request;
@@ -9,7 +9,7 @@ use LWP::UserAgent;
 use HTTP::Request::Common;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Carp qw(carp cluck);
-our $VERSION = do { my @r = (q$Revision: 143 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME
 
@@ -460,7 +460,7 @@ sub base_uri {
 
 =head1 SEE ALSO
 
-L<Net::Dynect::REST::Request>, L<Net::Dynect::REST::Response>.
+L<Net::Dynect::REST::Request>, L<Net::Dynect::REST::Response>, L<Net::Dynect::REST::info>.
 
 =head1 AUTHOR
 

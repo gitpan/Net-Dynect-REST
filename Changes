@@ -1,5 +1,9 @@
 Revision history for Perl extension Net::Dynect::REST.
 
+0.02  Sat Sep 25 09:35:00 2010
+	- update MANIFEST to include the rest of the code.
+	- update documentation references in many modules.
+
 0.01  Fri Sep 24 09:14:26 2010
 	- original version; created by h2xs 1.23 with options
 		-AX -n Net::Dynect::REST

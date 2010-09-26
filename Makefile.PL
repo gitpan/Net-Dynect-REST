@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'Net::Dynect::REST',
-    VERSION	      => '0.01',
+    VERSION	      => '0.02',
     PREREQ_PM         => {}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Net/Dynect/REST.pm', # retrieve abstract from module

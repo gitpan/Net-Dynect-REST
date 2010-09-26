@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Net-Dynect-REST
-version:            0.01
+version:            0.02
 abstract:           A REST implementation to communicate with Dynect
 author:
     - James Bromberger <james@rcpt.to>
