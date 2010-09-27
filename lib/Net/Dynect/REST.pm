@@ -1,5 +1,5 @@
 package Net::Dynect::REST;
-# $Id: REST.pm 149 2010-09-26 01:33:15Z james $
+# $Id: REST.pm 175 2010-09-27 07:28:53Z james $
 use strict;
 use warnings;
 use Net::Dynect::REST::Request;
@@ -9,7 +9,7 @@ use LWP::UserAgent;
 use HTTP::Request::Common;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Carp qw(carp cluck);
-our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 175 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME
 
@@ -287,6 +287,17 @@ sub execute {
     my $time_start = [gettimeofday];
 
     my $http_response = $self->_webclient->request($http_request);
+
+    if ($http_response->code eq 307) {
+      if ($http_response->decoded_content =~ m!/REST/Job/(\d+)$!) {
+        my $job = Net::Dynect::REST::Job->new(connection => $self, job_id => $1);
+        carp "Request was deferred; a Job object is being returned. Please check back on ->find() shortly to get your response.";
+        return $job;
+      } else {
+        carp "We got a 307 but we couldnt understand it: ". $http_response->decoded_content;
+        return;
+      }
+    }
 
     my $time_elapsed         = tv_interval($time_start);
     my $dynect_rest_response = Net::Dynect::REST::Response->new(
