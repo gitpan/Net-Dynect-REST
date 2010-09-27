@@ -1,4 +1,6 @@
 Revision history for Perl extension Net::Dynect::REST.
+0.05  Mon Sep 27 13:30:00 2010
+	- Fix bug in Net::Dynect::REST::ResourceRedord->delete()
 
 0.04  Mon Sep 27 12:25:00 2010
 	- Drop required Perl from 5.10.1 to 5.8.0 to support some more older systems.

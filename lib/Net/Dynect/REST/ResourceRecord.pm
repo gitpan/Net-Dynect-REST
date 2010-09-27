@@ -1,11 +1,11 @@
 package Net::Dynect::REST::ResourceRecord;
-# $Id: ResourceRecord.pm 149 2010-09-26 01:33:15Z james $
+# $Id: ResourceRecord.pm 167 2010-09-27 05:28:48Z james $
 use strict;
 use warnings;
 use overload '""' => \&_as_string;
 use Carp;
 use Net::Dynect::REST::RData;
-our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 167 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME 
 
@@ -236,7 +236,7 @@ sub save {
 sub delete {
     my $self = shift;
     return unless defined $self->{connection};
-    return unless defined $self->name && $self->serial;
+    return unless defined $self->fqdn && $self->serial;
     my $request = Net::Dynect::REST::Request->new(
         operation => 'delete',
         service   => 'Zone/' . $self->name
@@ -244,7 +244,7 @@ sub delete {
     my $response = $self->{connection}->execute($request);
     $self->last_response($response);
     if ( $response->status =~ /^success$/i ) {
-        $self->{name}         = undef;
+        $self->{fqdn}         = undef;
         $self->{serial}       = undef;
         $self->{serial_style} = undef;
         $self->{zone_type}    = undef;
