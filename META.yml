@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Net-Dynect-REST
-version:            0.02
+version:            0.03
 abstract:           A REST implementation to communicate with Dynect
 author:
     - James Bromberger <james@rcpt.to>
@@ -10,7 +10,9 @@ configure_requires:
     ExtUtils::MakeMaker:  0
 build_requires:
     ExtUtils::MakeMaker:  0
-requires:  {}
+requires:
+    JSON:            0
+    LWP::UserAgent:  0
 no_index:
     directory:
         - t

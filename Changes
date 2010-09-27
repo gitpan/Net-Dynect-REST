@@ -1,5 +1,8 @@
 Revision history for Perl extension Net::Dynect::REST.
 
+0.03  Mon Sep 27 10:00:00 2010
+	- add in dependencies so module will pass tests! *sigh*
+
 0.02  Sat Sep 25 09:35:00 2010
 	- update MANIFEST to include the rest of the code.
 	- update documentation references in many modules.
