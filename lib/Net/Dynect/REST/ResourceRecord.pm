@@ -1,11 +1,11 @@
 package Net::Dynect::REST::ResourceRecord;
-# $Id: ResourceRecord.pm 167 2010-09-27 05:28:48Z james $
+# $Id: ResourceRecord.pm 172 2010-09-27 06:26:59Z james $
 use strict;
 use warnings;
 use overload '""' => \&_as_string;
 use Carp;
 use Net::Dynect::REST::RData;
-our $VERSION = do { my @r = (q$Revision: 167 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 172 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME 
 
@@ -229,30 +229,30 @@ sub save {
         carp "Response failed: $response";
         return;
     }
-    print $response . "\n";
+    #print $response . "\n";
     return 1;
 }
 
 sub delete {
     my $self = shift;
     return unless defined $self->{connection};
-    return unless defined $self->fqdn && $self->serial;
+    return unless defined $self->zone;
+    return unless defined $self->fqdn && $self->record_id;
     my $request = Net::Dynect::REST::Request->new(
         operation => 'delete',
-        service   => 'Zone/' . $self->name
+        service   => __PACKAGE__->_service_base_uri . '/' . $self->zone . '/' . $self->fqdn . '/' . $self->record_id
     );
     my $response = $self->{connection}->execute($request);
     $self->last_response($response);
     if ( $response->status =~ /^success$/i ) {
         $self->{fqdn}         = undef;
-        $self->{serial}       = undef;
-        $self->{serial_style} = undef;
-        $self->{zone_type}    = undef;
+        $self->{record_id}    = undef;
         $self                 = undef;
         return 1;
     }
     else {
-        print $response->msg->[0]->info;
+        printf "%s\n", $response->msgs->[0]->info if defined $response->msgs;
+	return 0;
     }
 }
 
@@ -350,7 +350,7 @@ sub record_id {
     my $self = shift;
     if (@_) {
         my $new = shift;
-        if ( $new !~ /^\d+$/ ) {
+        if ( $new !~ /^\d*$/ ) {
             carp "Invalid record id: $new";
             return;
         }

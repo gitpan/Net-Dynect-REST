@@ -1,10 +1,10 @@
 package Net::Dynect::REST::MXRecord;
-# $Id: MXRecord.pm 149 2010-09-26 01:33:15Z james $
+# $Id: MXRecord.pm 170 2010-09-27 06:24:57Z james $
 use strict;
 use warnings;
 use Net::Dynect::REST::ResourceRecord;
 our @ISA = ("Net::Dynect::REST::ResourceRecord");
-our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 170 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 sub _service_base_uri {
   return "MXRecord";
@@ -12,7 +12,7 @@ sub _service_base_uri {
 
 =head1 NAME
 
-Net::Dynect::REST::MSRecord - Mail eXchanger Record
+Net::Dynect::REST::MXRecord - Mail eXchanger Record
 
 =head1 AUTHOR
 
