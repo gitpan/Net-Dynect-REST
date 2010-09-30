@@ -1,15 +1,15 @@
 package Net::Dynect::REST::RData;
-# $Id: RData.pm 170 2010-09-27 06:24:57Z james $
+# $Id: RData.pm 177 2010-09-28 00:50:02Z james $
 use strict;
 use warnings;
 use overload '""' => \&_as_string;
 use Carp;
 our $AUTOLOAD;
-our $VERSION = do { my @r = (q$Revision: 170 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 177 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME
 
-Net::Dynect::REST::RData - the data returned as a result of querying Dynect
+Net::Dynect::REST::RData - Record Data returned as a result of querying Dynect
 
 =head1 SYNOPSIS
 

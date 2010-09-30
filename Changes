@@ -1,5 +1,9 @@
 Revision history for Perl extension Net::Dynect::REST.
 
+0.08  Thu Oct 30 09:30:00 2010
+	- Documentation updates and spelling fixes.
+	- Added SSLeay as a dependency as the default (and only) protocol to talk to Dynect is HTTPs (you could try HTTP, but its not recommended by me for sending authentication, and its nto supported by Dynect publicly, but if you're testing/playing with proxies that do the SSL bump for you, then its an option.
+
 0.07  Mon Sep 27 15:30:00 2010
 	- Start to handle any deferred responses that throw a Job reference. You must check the ref() of the response to ensure you have a response object (Net::Dynect::REST::Response), and not a Job object (Net::Dynect::REST::Job). If you get a job object, then you need to check back on $job->find() to get the eventual Response object, when it is ready.
 

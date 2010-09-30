@@ -1,11 +1,17 @@
 package Net::Dynect::REST::ZoneChanges;
-# $Id: ZoneChanges.pm 149 2010-09-26 01:33:15Z james $
+# $Id: ZoneChanges.pm 177 2010-09-28 00:50:02Z james $
 use strict;
 use warnings;
 use overload '""' => \&_as_string;
 use Carp;
 use Net::Dynect::REST::RData;
-our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 177 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+
+=head1 NAME 
+
+Net::Dynect::REST::Zone - List changes pending for a DNS zone
+
+=cut 
 
 sub new {
     my $proto = shift;
@@ -102,9 +108,6 @@ sub _as_string {
 
 1;
 
-=head1 NAME 
-
-Net::Dynect::REST::Zone - A DNS zone object
 
 =head1 SYNOPSIS
 

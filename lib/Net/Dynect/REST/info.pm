@@ -1,5 +1,5 @@
 package Net::Dynect::REST::info;
-# $Id: info.pm 149 2010-09-26 01:33:15Z james $
+# $Id: info.pm 177 2010-09-28 00:50:02Z james $
 
 1;
 
@@ -7,7 +7,7 @@ __END__
 
 =head1 NAME
 
-Net::Dynect::REST::info - information about the Net::Dynect::REST modules
+Net::Dynect::REST::info - Information about the Net::Dynect::REST modules
 
 =head1 DESCRIPTION
 

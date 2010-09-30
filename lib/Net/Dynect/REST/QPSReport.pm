@@ -1,15 +1,15 @@
 package Net::Dynect::REST::QPSReport;
 
-# $Id: QPSReport.pm 149 2010-09-26 01:33:15Z james $
+# $Id: QPSReport.pm 177 2010-09-28 00:50:02Z james $
 use strict;
 use warnings;
 use Carp;
 use Net::Dynect::REST::RData;
-our $VERSION = do { my @r = ( q$Revision: 149 $ =~ /\d+/g ); sprintf "%d." . "%03d" x $#r, @r };
+our $VERSION = do { my @r = ( q$Revision: 177 $ =~ /\d+/g ); sprintf "%d." . "%03d" x $#r, @r };
 
 =head1 NAME 
 
-Net::Dynect::REST::QPSReport - delete all objects againsta  node
+Net::Dynect::REST::QPSReport - Get queries per second report
 
 =head1 SYNOPSIS
 

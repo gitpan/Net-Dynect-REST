@@ -1,16 +1,16 @@
 package Net::Dynect::REST::Response;
-# $Id: Response.pm 149 2010-09-26 01:33:15Z james $
+# $Id: Response.pm 177 2010-09-28 00:50:02Z james $
 use strict;
 use warnings;
 use overload '""' => \&_as_string;
 use Net::Dynect::REST::Response::Data;
 use Net::Dynect::REST::Response::Msg;
 use Carp;
-our $VERSION = do { my @r = (q$Revision: 149 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
+our $VERSION = do { my @r = (q$Revision: 177 $ =~ /\d+/g); sprintf "%d."."%03d" x $#r, @r };
 
 =head1 NAME
 
-Net::Dynect::REST::Response - a response from a request to Dynect
+Net::Dynect::REST::Response - A response object from a request to Dynect
 
 =head1 SYNOPSIS
 
