@@ -1,4 +1,4 @@
-Net-Dynect-REST version 0.01
+Net-Dynect-REST version 0.09
 ============================
 
 Dynect.net is a provider of hosted DNS services. They offer a /two/ 
@@ -83,7 +83,7 @@ Also, thanks to NetShelter and Dynect.
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2010 by James Bromberger
+Copyright (C) 2011 by James Bromberger
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.10.1 or,
